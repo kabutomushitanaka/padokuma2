@@ -30,7 +30,7 @@ class _JankenScreenState extends State<JankenScreen> {
 
   // ユーザーの選択肢を受け取ってゲームを開始
   void _playGame(String userChoice) {
-    final choices = ['グー', 'チョキ', 'パー'];
+    final choices = ['グーーーーー', 'チョキ', 'パー'];
     final random = Random();
 
     // コンピューターの選択肢をランダムに決定
