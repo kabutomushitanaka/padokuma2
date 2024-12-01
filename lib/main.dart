@@ -8,7 +8,7 @@ void main(){
       mainAxisAlignment: MainAxisAlignment.center ,
       crossAxisAlignment: CrossAxisAlignment.center ,
       children: [
-        Image.asset('images/IMG_8421.PNG',
+        Image.asset('images/onepiece06_chopper.png',
           width: 500, // 幅を100に指定
           height: 500, // 高さを100に指定
         )
