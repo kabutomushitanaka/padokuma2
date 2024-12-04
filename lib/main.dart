@@ -4,66 +4,57 @@ import 'package:padokuma2/banana_counter.dart';
 
 
 void main(){
-
- xxxx(){
-   debugPrint('これから通信を恥じみぃです');
-   debugPrint('通信ちうデフ');
-   debugPrint('通信が終わったンゴ');
- }
-
-  final button = ElevatedButton(
-
-    onPressed: xxxx,
-    child: Text('おしてみてンゴ'),
-
-  );
-
-
-  final b =BananaCounter(number: 88,
-  );
-
-  final img =
-   //画像
-      Image.asset('images/onepiece06_chopper.png',
-
-  );
-
-  // 小さいコンテナ
-  final smallCon = Container(
-    color: Colors.deepOrange, // オレンジ色
-    width: 50,
-    height: 50,
-  );
-
-  // 縦に並べるカラム
-  final col = SingleChildScrollView(
-    child:Column(
-    children: [
-      smallCon, // 小さいコンテナ
-      img, // 画像
-      smallCon, // 小さいコンテナ
-    ],
-  ),
-  );
-
-  // 大きいコンテナ
-  final bigCon = Container(
-    color: Colors.blue, // 青色
-    width: 400,
-    height: 400,
-    alignment: Alignment.centerLeft,
-    padding: const EdgeInsets.all(20),
-    child: col, // 中にカラムを丸ごと入れる
-  );
-
-  // アプリ
-  final a = MaterialApp(
-    home: Scaffold(
-      body: Center(
-        child: button, // 大きいコンテナを表示する
+    // テキストフィールド の コントローラー
+    final controller = TextEditingController();
+    // テキストフィールド本体
+    final textField = TextField(
+      // コントローラ を このテキストフィールドに結びつける
+      controller: controller,
+      // デコレーション
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: "あなたの名前",
+        hintText: "カタカナで入力してください",
+        errorText: null, // エラーメッセージは今回使わない。ここに書いたり消したりできる。
       ),
-    ),
-  );
-  runApp(a);
+    );
+    // 関数
+    xxxx() {
+      // コントローラーから文字を取り出して確認
+      debugPrint(controller.text);
+    }
 
-}
+    // ボタン
+    final button = ElevatedButton(
+      // 関数を このボタンに結びつけておく
+      onPressed: xxxx,
+      child: const Text('ボタンです'),
+    );
+
+    // アプリ
+    final app = MaterialApp(
+      // 画面
+      home: Scaffold(
+        // 真ん中
+        body: Center(
+          // 縦に並べる
+          child: Column(
+            // いい感じにスペース開ける
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // コンテナ
+              Container(
+                width: 300, // 横幅
+                child: textField, // テキストフィールド
+              ),
+              // ボタンをおく
+              button,
+            ],
+          ),
+        ),
+      ),
+    );
+
+    // アプリを動かす
+    runApp(app);
+  }
