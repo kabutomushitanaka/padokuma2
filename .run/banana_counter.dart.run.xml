@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="banana_counter.dart" type="FlutterRunConfigurationType" factoryName="Flutter" activateToolWindowBeforeRun="false">
+    <option name="filePath" value="$PROJECT_DIR$/lib/banana_counter.dart" />
+    <method v="2" />
+  </configuration>
+</component>

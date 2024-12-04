@@ -1,7 +1,12 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:padokuma2/banana_counter.dart';
+
 
 void main(){
+
+  final b =BananaCounter(number: 88,
+  );
 
   final img =
    //画像
@@ -41,7 +46,7 @@ void main(){
   final a = MaterialApp(
     home: Scaffold(
       body: Center(
-        child: bigCon, // 大きいコンテナを表示する
+        child: b, // 大きいコンテナを表示する
       ),
     ),
   );
