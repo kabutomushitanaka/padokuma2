@@ -5,6 +5,20 @@ import 'package:padokuma2/banana_counter.dart';
 
 void main(){
 
+ xxxx(){
+   debugPrint('これから通信を恥じみぃです');
+   debugPrint('通信ちうデフ');
+   debugPrint('通信が終わったンゴ');
+ }
+
+  final button = ElevatedButton(
+
+    onPressed: xxxx,
+    child: Text('おしてみてンゴ'),
+
+  );
+
+
   final b =BananaCounter(number: 88,
   );
 
@@ -46,7 +60,7 @@ void main(){
   final a = MaterialApp(
     home: Scaffold(
       body: Center(
-        child: b, // 大きいコンテナを表示する
+        child: button, // 大きいコンテナを表示する
       ),
     ),
   );
