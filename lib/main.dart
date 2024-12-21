@@ -2,6 +2,20 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:padokuma2/banana_counter.dart';
 
+//ツイート
+class Tweet {
+
+  //ユーザーの名前
+  final String userName = '';
+  //アイコン画像
+  final String iconUrl = '';
+  //文章メッセージ
+  final String text = '';
+  //送信日時
+  final String createdAt = '';
+
+}
+
 
 void main(){
     // テキストフィールド の コントローラー
