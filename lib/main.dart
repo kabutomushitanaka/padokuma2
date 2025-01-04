@@ -1,74 +1,48 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:padokuma2/banana_counter.dart';
+import 'package:padokuma2/page_a.dart';
+import 'package:padokuma2/page_b.dart';
+import 'package:padokuma2/page_c.dart';
+import 'package:go_router/go_router.dart';
 
-//ツイート
-class Tweet {
+/*
+  最新のFlutterに対応するため、動画と少しコードが変わりました
+*/
 
-  //ユーザーの名前
-  final String userName = '';
-  //アイコン画像
-  final String iconUrl = '';
-  //文章メッセージ
-  final String text = '';
-  //送信日時
-  final String createdAt = '';
-
+main() {
+  final app = App();
+  runApp(app);
 }
 
+// アプリ全体
+class App extends StatelessWidget {
+  App({super.key});
 
-void main(){
-    // テキストフィールド の コントローラー
-    final controller = TextEditingController();
-    // テキストフィールド本体
-    final textField = TextField(
-      // コントローラ を このテキストフィールドに結びつける
-      controller: controller,
-      // デコレーション
-      decoration: const InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: "あなたの名前",
-        hintText: "カタカナで入力してください",
-        errorText: null, // エラーメッセージは今回使わない。ここに書いたり消したりできる。
+  final router = GoRouter(
+    // パス (アプリが起動したとき)
+    initialLocation: '/a',
+    // パスと画面の組み合わせ
+    routes: [
+      GoRoute(
+        path: '/a',
+        builder: (context, state) => const PageA(),
       ),
-    );
-    // 関数
-    xxxx() {
-      // コントローラーから文字を取り出して確認
-      debugPrint(controller.text);
-    }
-
-    // ボタン
-    final button = ElevatedButton(
-      // 関数を このボタンに結びつけておく
-      onPressed: xxxx,
-      child: const Text('ボタンです'),
-    );
-
-    // アプリ
-    final app = MaterialApp(
-      // 画面
-      home: Scaffold(
-        // 真ん中
-        body: Center(
-          // 縦に並べる
-          child: Column(
-            // いい感じにスペース開ける
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              // コンテナ
-              Container(
-                width: 300, // 横幅
-                child: textField, // テキストフィールド
-              ),
-              // ボタンをおく
-              button,
-            ],
-          ),
-        ),
+      GoRoute(
+        path: '/b',
+        builder: (context, state) => const PageB(),
       ),
-    );
+      GoRoute(
+        path: '/c',
+        builder: (context, state) => const PageC(),
+      ),
+    ],
+  );
 
-    // アプリを動かす
-    runApp(app);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      routeInformationProvider: router.routeInformationProvider,
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
+    );
   }
+}
